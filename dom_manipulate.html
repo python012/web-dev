@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DOM Manipulate</h1>
+    <script>
+        var h1 = document.querySelector("h1");
+        var initColor = false;
+
+        setInterval(function(){
+            if (initColor) {
+                h1.style.background = "#FFEBCD";
+            } else {
+                h1.style.background = "#C5C1AA";
+            }
+            initColor = !initColor;
+        }, 1000);
+    </script>
+</body>
+</html>
