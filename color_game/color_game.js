@@ -9,7 +9,7 @@ var colors = [
     randomColor()
 ]
 
-var isHardMode = true;
+var isHardMode = true; // as default
 
 var squares = document.querySelectorAll(".square");
 var colorDisplay = document.querySelector("#colorDisplay");
@@ -24,19 +24,19 @@ var hardModeBtn = document.querySelector("#hardMode");
 colorDisplay.textContent = theColor;
 hardModeBtn.style.backgroundColor = 'blue';
 
-resetBtn.addEventListener("click", function(){
+resetBtn.addEventListener("click", function() {
     console.log("new game");
     newGame();
 });
 
-easyModeBtn.addEventListener("click", function(){
+easyModeBtn.addEventListener("click", function() {
     isHardMode = false;
     newGame();
     easyModeBtn.style.backgroundColor = 'blue';
     hardModeBtn.style.backgroundColor = 'white';
 });
 
-hardModeBtn.addEventListener("click", function(){
+hardModeBtn.addEventListener("click", function() {
     isHardMode = true;
     newGame();
     easyModeBtn.style.backgroundColor = 'white';
@@ -70,7 +70,7 @@ function newGame() {
     }
     colorDisplay.textContent = theColor; // refresh the texts in title
     messageDisplay.textContent = "";
-    h1.style.backgroundColor = "#232323";
+    h1.style.backgroundColor = "steelblue";
 }
 
 function randomColor() {
@@ -83,7 +83,7 @@ function numLessThan256() {
 
 for (var i=0;i<squares.length;i++) {
     squares[i].style.backgroundColor = colors[i];
-    squares[i].addEventListener("click", function(){
+    squares[i].addEventListener("click", function() {
         if (this.style.backgroundColor == theColor) {
             messageDisplay.textContent = "Correct!";
             for (const item of squares) {
@@ -94,6 +94,5 @@ for (var i=0;i<squares.length;i++) {
             messageDisplay.textContent = "Wrong!";
             this.style.backgroundColor = "#232323";
         }
-        
     });
 }
